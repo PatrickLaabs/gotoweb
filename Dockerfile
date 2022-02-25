@@ -1,4 +1,4 @@
 FROM alpine
 EXPOSE 8080
-COPY webtogo /usr/bin/webtogo
-ENTRYPOINT ["/usr/bin/webtogo"]
+COPY gotoweb /usr/bin/gotoweb
+ENTRYPOINT ["/usr/bin/gotoweb"]
