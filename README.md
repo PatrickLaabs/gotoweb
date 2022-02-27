@@ -9,6 +9,7 @@
 - `brew install minikube`
 - `brew install podman`
 - `brew install kubernetes-cli`
+- `brew install helm`
 
 ---
 
@@ -33,6 +34,7 @@
 minikube dashboard (run inside another terminal)
 minikube service --url gotoweb-service
 kubectl get svc
+
 minikube tunnel
 kubectl expose deployment gotoweb --type=LoadBalancer --port=8080
 kubectl get svc
@@ -73,3 +75,22 @@ To check the List of available, run: \
 
 Roll back to desired revision: \
 `kubectl rollout undo deployment/gotoweb --to-revision=<rev-nr>`
+
+---
+
+### Automatic Deployment Updates
+https://keel.sh/docs/#deploying-with-kubectl
+
+Install _Keel_ with helm inside cluster.
+
+Add Keel repo and update helm's repo list by running: \
+`helm repo add keel https://charts.keel.sh ` \
+`helm repo update`
+
+`helm upgrade --install keel --namespace=kube-system keel/keel`
+
+Verify installation of Keel, run: \
+`kubectl --namespace=kube-system get pods -l "app=keel"`
+
+> #### Enable Admin Dashboard of Keel
+> `kubectl apply -f https://sunstone.dev/keel?namespace=default&username=admin&password=admin&relay_key=TOKEN_KEY&relay_secret=TOKEN_SECRET&relay_tunnel=TUNNEL_NAME&tag=latest`

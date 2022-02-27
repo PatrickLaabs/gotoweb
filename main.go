@@ -8,7 +8,7 @@ import (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("<h1>Gophers are Welcome! And now with K8s! :)</h1>"))
+		w.Write([]byte("<h1>Gophers are Welcome! And now with K8s! with Version 0.0.7  :)</h1>"))
 	})
 	fmt.Println("Server is running on port :8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
