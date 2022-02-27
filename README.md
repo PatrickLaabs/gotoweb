@@ -31,13 +31,13 @@
 
 `kubectl apply -f k8s-deployment.yml`
 
-minikube dashboard (run inside another terminal)
-minikube service --url gotoweb-service
-kubectl get svc
+`minikube dashboard` \
+`minikube tunnel` > This one is mandatory, since we need to tunnel the connection from minikube
 
-minikube tunnel
-kubectl expose deployment gotoweb --type=LoadBalancer --port=8080
-kubectl get svc
+> Following command is currently no longer needed \
+> because we're initializing the
+> loadbalancer inside the deployment yaml. \
+> ~~kubectl expose deployment gotoweb --type=LoadBalancer --port=8080~~
 
 Access via http://<external-IP>:<Port>
 
