@@ -19,7 +19,7 @@ spec:
       containers:
         - name: gotoweb
           image: ghcr.io/patricklaabs/gotoweb
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080  # Should match the port number that the Go application listens on
           livenessProbe:           # To check the health of the Pod
