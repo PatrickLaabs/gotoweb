@@ -7,8 +7,8 @@ image:
   tag: "0.0.8"
   pullPolicy: IfNotPresent
 service:
-  name: gotoweb
-  type: ClusterIP
+  name: gotoweb-service
+  type: LoadBalancer
   externalPort: 8080
   internalPort: 8080
 

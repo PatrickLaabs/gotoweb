@@ -11,6 +11,10 @@ spec:
     metadata:
       labels:                    # The labels that will be applied to all of the pods in this deployment
         app: gotoweb
+      annotations:
+        keel.sh/policy: force
+        keel.sh/trigger: poll
+        keel.sh/pollSchedule: "@every 1m"
     spec:                        # Spec for the container which will run in the Pod
       containers:
         - name: gotoweb
