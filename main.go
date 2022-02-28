@@ -13,6 +13,7 @@ func main() {
 		<title>GOphers</title>
 		</head>
 		<body>
+			<h1>Automatically deployed with Keel on k8s!</h1>
 			Welcome, Gophers!
 		</body>
 	</html>
